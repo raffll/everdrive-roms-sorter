@@ -25,17 +25,17 @@ if compgen -G "*${keyword}*" > /dev/null; then
 	mkdir -p "${dir}"
 	find . -maxdepth 1 -name "*${keyword}*" -type f -exec mv {} "./${dir}/" \;
 
-	#cd "$dir"
-	#move2letters
-	#cd ..
+	cd "$dir"
+	move2letters
+	cd ..
 fi
 }
 
-#echo "Unpacking..."
-#unzip -q "*.zip" &&
-#
-#echo "Removing..."
-#rm *.zip &&
+echo "Unpacking..."
+unzip -q "*.zip" &&
+
+echo "Removing..."
+rm *.zip &&
 
 dir="${1} (Pirate)"
 keyword="(Pirate)"
