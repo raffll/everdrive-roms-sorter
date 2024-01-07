@@ -25,17 +25,17 @@ if compgen -G "*${keyword}*" > /dev/null; then
 	mkdir -p "${dir}"
 	find . -maxdepth 1 -name "*${keyword}*" -type f -exec mv {} "./${dir}/" \;
 
-	cd "$dir"
-	move2letters
-	cd ..
+	#cd "$dir"
+	#move2letters
+	#cd ..
 fi
 }
 
-echo "Unpacking..."
-unzip -q "*.zip" &&
-
-echo "Removing..."
-rm *.zip &&
+#echo "Unpacking..."
+#unzip -q "*.zip" &&
+#
+#echo "Removing..."
+#rm *.zip &&
 
 dir="${1} (Pirate)"
 keyword="(Pirate)"
@@ -64,9 +64,9 @@ do
 	move2folder
 done
 
-for i in "(USA" "(Japan, USA" "(World"
+for i in "(USA" "(Japan, USA" "(World" "(Canada"
 do 
-	dir="${1} (USA)"
+	dir="${1} (USA, Canada, World)"
 	keyword="${i}"
 	move2folder
 done
@@ -75,6 +75,20 @@ dir="${1} (Japan)"
 keyword="(Japan"
 move2folder
 
-dir="${1} (World)"
+dir="${1} (Europe, Asia, Australia...)"
 keyword=".${ext}"
 move2folder
+
+#for i in "(Europe" "(Germany" "(France" "(Italy" "(Sweden" "(Spain"
+#do 
+#	dir="${1} (Europe)"
+#	keyword="${i}"
+#	move2folder
+#done
+#
+#for i in "(Asia" "(China" "(Brazil" "(Australia" "(Russia" "(Korea" "(Taiwan"
+#do 
+#	dir="${1} ${i})"
+#	keyword="${i}"
+#	move2folder
+#done
