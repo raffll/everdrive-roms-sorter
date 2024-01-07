@@ -36,6 +36,16 @@ unzip -q "*.zip" &&
 
 echo "Removing..."
 rm *.zip &&
+find . ! -name "*.${ext}*" -type f -delete
+
+if [ "${1}" == "GBC" ]; then
+	dir="${1} (GB Compatible)"
+	keyword="(GB Compatible)"
+	echo "Moving to ${dir}..."
+	mkdir -p "${dir}"
+	find . -maxdepth 1 -name "*${keyword}*" -type f -exec mv {} "./${dir}/" \;
+	cd "${dir}"
+fi
 
 dir="${1} (Pirate)"
 keyword="(Pirate)"
